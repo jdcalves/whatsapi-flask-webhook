@@ -3,7 +3,6 @@ import json
 import logging
 from heyoo import WhatsApp
 from os import environ
-from dotenv import load_dotenv
 from flask import Flask, request, make_response
 
 
