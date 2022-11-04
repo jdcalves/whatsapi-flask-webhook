@@ -1,14 +1,16 @@
 import os
 import json
+import logging
 from heyoo import WhatsApp
 from os import environ
-from flask import Flask, request
+from dotenv import load_dotenv
+from flask import Flask, request, make_response
 
 
-
-messenger = WhatsApp(environ.get("TOKEN")) #this should be writen as 
+#messenger = WhatsApp(environ.get("TOKEN"))
+messenger = WhatsApp(environ.get("TOKEN"), phone_number_id=environ.get("PHONE_NUMBER_ID"))
+#this should be writen as 
 #WhatsApp(token = "inpust accesstoken", phone_number_id="input phone number id") #messages are not recieved without this pattern
-
 
 VERIFY_TOKEN = environ.get("APP_SECRET") #application secret here
 
